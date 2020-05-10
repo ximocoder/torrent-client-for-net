@@ -84,7 +84,7 @@ namespace TorrentClient.PeerWireProtocol.Messages
         /// <returns>The peer id binary array.</returns>
         public static byte[] FromPeerId(string peerId)
         {
-            peerId.MustBe(x => x.Contains("-"));
+            peerId.MustBe(x => x.Contains("-", System.StringComparison.InvariantCulture));
 
             int delimiterIndex;
 

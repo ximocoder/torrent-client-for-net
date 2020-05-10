@@ -333,9 +333,9 @@ namespace TorrentClient.PeerWireProtocol.Messages
         /// </returns>
         public override int GetHashCode()
         {
-            return this.InfoHash.GetHashCode() ^
-                   this.PeerId.GetHashCode() ^
-                   this.ProtocolString.GetHashCode() ^
+            return this.InfoHash.GetHashCode(System.StringComparison.InvariantCulture) ^
+                   this.PeerId.GetHashCode(System.StringComparison.InvariantCulture) ^
+                   this.ProtocolString.GetHashCode(System.StringComparison.InvariantCulture) ^
                    this.SupportsFastPeer.GetHashCode() ^
                    this.SupportsExtendedMessaging.GetHashCode();
         }

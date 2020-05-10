@@ -113,7 +113,7 @@ namespace TorrentClient.PeerWireProtocol.Messages
         /// </returns>
         public override int GetHashCode()
         {
-            return this.ToString().GetHashCode();
+            return this.ToString().GetHashCode(System.StringComparison.InvariantCulture);
         }
 
         /// <summary>

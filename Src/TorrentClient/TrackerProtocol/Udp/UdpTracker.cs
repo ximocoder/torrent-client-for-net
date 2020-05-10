@@ -131,7 +131,14 @@ namespace TorrentClient.TrackerProtocol.Udp
                     udp.Client.SendTimeout = (int)TimeSpan.FromSeconds(5).TotalMilliseconds;
                     udp.Client.ReceiveTimeout = (int)TimeSpan.FromSeconds(15).TotalMilliseconds;
 
-                    udp.Send(message.Encode(), message.Length, this.TrackerUri.Host, this.TrackerUri.Port);
+                    if (this.TrackerUri.Port > 0)
+                    {
+                        udp.Send(message.Encode(), message.Length, this.TrackerUri.Host, this.TrackerUri.Port);
+                    }
+                    else
+                    {
+                        return null;
+                    }
 
                     asyncResult = udp.BeginReceive(null, null);
 

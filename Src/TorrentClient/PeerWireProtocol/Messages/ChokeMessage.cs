@@ -155,10 +155,7 @@ namespace TorrentClient.PeerWireProtocol.Messages
         /// <returns>
         /// A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
         /// </returns>
-        public override int GetHashCode()
-        {
-            return this.ToString().GetHashCode();
-        }
+        public override int GetHashCode() => this.ToString().GetHashCode(System.StringComparison.InvariantCulture);
 
         /// <summary>
         /// Returns a <see cref="string" /> that represents this instance.

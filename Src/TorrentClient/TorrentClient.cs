@@ -395,6 +395,11 @@ namespace TorrentClient
         /// <param name="torrentInfo">The torrent information.</param>
         public void Start(TorrentInfo torrentInfo)
         {
+            if (torrentInfo is null)
+            {
+                throw new ArgumentNullException(nameof(torrentInfo));
+            }
+
             torrentInfo.CannotBeNull();
 
             TransferManager transfer;

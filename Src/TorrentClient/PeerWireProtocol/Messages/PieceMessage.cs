@@ -280,7 +280,7 @@ namespace TorrentClient.PeerWireProtocol.Messages
 
             hash = this.PieceIndex.GetHashCode() ^
                    this.BlockOffset.GetHashCode() ^
-                   this.Data.ToHexaDecimalString().GetHashCode();
+                   this.Data.ToHexaDecimalString().GetHashCode(System.StringComparison.InvariantCulture);
 
             return hash;
         }
