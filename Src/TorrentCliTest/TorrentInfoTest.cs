@@ -23,7 +23,7 @@
         {
             var regex = new Regex("[a-zA-Z0-9+/=]{28}", RegexOptions.Compiled);
             int i = 0;
-            
+
             // multi file
             if (TorrentInfo.TryLoad(this.filePath, out var info))
             {
@@ -248,7 +248,7 @@
                 Assert.AreEqual("http://linuxtracker.org:2710/00000000000000000000000000000000/announce", info.AnnounceList.ElementAt(0).AbsoluteUri);
                 Assert.AreEqual("\"Debian CD from cdimage.debian.org\"", info.Comment);
                 Assert.AreEqual(null, info.CreatedBy);
-                Assert.AreEqual(new DateTime(2019,04, 27, 13, 16, 45), info.CreationDate);
+                Assert.AreEqual(new DateTime(2019, 04, 27, 13, 16, 45), info.CreationDate);
                 Assert.AreEqual(Encoding.ASCII, info.Encoding);
                 Assert.AreEqual(1, info.Files.Count());
                 Assert.AreEqual(info.Length, info.Files.Sum(x => x.Length));

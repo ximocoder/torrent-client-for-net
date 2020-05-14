@@ -11,7 +11,7 @@ namespace TorrentCliTest
         {
         }
 
-        [Test ,Explicit]
+        [Test, Explicit]
         public void TestTransferManager()
         {
             TorrentInfo torrent;
@@ -34,4 +34,3 @@ namespace TorrentCliTest
         }
     }
 }
-

@@ -85,7 +85,9 @@ namespace TorrentClient.Extensions
             {
                 if (hashSize == 128)
                 {
+#pragma warning disable CA5350 // Do not use insecure cryptographic algorithm SHA1.
                     using (HashAlgorithm sha = new SHA1CryptoServiceProvider())
+#pragma warning restore CA5350 // Do not use insecure cryptographic algorithm SHA1.
                     {
                         hashRaw = CalculateHash(data, offset, length, sha);
                     }
